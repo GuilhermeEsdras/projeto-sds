@@ -1,0 +1,14 @@
+/* 
+.:: Global CSS ::.
+*/
+
+html, body {
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
