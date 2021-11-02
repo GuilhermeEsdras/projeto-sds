@@ -1,0 +1,17 @@
+
+// Button
+.btn-example {
+  display: block;
+  color: $color-primary;
+  border-color: transparent;
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+  }
+}
+
+// Alternate Button
+.btn-example.alt {
+  color: $color-primary;
+}
