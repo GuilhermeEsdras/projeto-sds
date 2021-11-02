@@ -1,8 +1,8 @@
 const DataTable = () => {
   return (
-    <div className="table-responsive">
-      <table className="table table-striped table-sm">
-        <thead>
+    <div className="table-responsive mb-5">
+      <table className="table table-striped table-sm table-hover">
+        <thead className="table-light">
           <tr>
             <th scope="col">Data</th>
             <th scope="col">Vendedor</th>
