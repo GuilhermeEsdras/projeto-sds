@@ -16,21 +16,16 @@
 </p>
 
 
-## Live Preview
-
-To view this project live, visit: https://gui-dsvendas.netlify.app/
-
-
 ## Applied Build Patterns
 
 ### Conceptual Model
 
- ![Entidades Seller e Sale](./docs/images/modelo-conceitual.png "Diagrama de Modelo conceitual")
+![Entidades Seller e Sale](./docs/images/modelo-conceitual.png "Diagrama de Modelo conceitual")
 
 
 ### Layered Structure
 
- ![Diagrama do padrão de camadas adotado](./docs/images/camadas.png "Padrão de camadas")
+![Diagrama do padrão de camadas adotado](./docs/images/camadas.png "Padrão de camadas")
 
 
 ## Contributing
