@@ -16,3 +16,34 @@
   <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white">
 </p>
 
+
+## Run Front End Locally
+
+Clone the project
+
+```bash
+  git clone git@github.com:GuilhermeEsdras/projeto-sds.git
+```
+
+Go to the project frontend directory
+
+```bash
+  cd projeto-sds
+  cd frontend
+```
+
+Install dependencies
+
+```bash
+  npm install
+  //or
+  yarn install
+```
+
+Start the server
+
+```bash
+  npm run start
+  //or
+  yarn start
+```
