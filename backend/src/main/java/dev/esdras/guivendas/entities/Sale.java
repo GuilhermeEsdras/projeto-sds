@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class Sale {
 
     @Id // Indica ao banco de dados que esse atributo é a chave primária
-    @GeneratedValue(strategy = GenerationType.SEQUENCE) // Indica que este atributo é autoincrementável
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Indica que este atributo é autoincrementável
     private Long id;
 
     private Integer visited;
@@ -19,6 +19,8 @@ public class Sale {
     /**
      * Composição das entidades Sale & Seller
      */
+    @ManyToOne // Cardinalidade Muitos para Um
+    @JoinColumn(name = "seller_id") // Especifica a chave estrangeira
     private Seller seller; // No modelo conceitual: Sale possui 1 Seller
 
     public Sale() {}
