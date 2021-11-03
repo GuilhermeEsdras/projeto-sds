@@ -50,7 +50,7 @@ table {
   }
 }
 
-/*** [ Table Custons ] ***/
+/*** [ Table Customs ] ***/
 
 .gui-table-row {
   &:hover {
@@ -85,6 +85,7 @@ table {
       text-transform: uppercase;
 
       background-color: $color-primary;
+      border-bottom: 1px solid $color-lighter-grey;
     }
   }
 }
