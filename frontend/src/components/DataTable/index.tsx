@@ -15,11 +15,27 @@ const TableRow = ({
 }: TableRowProps) => {
   return (
     <tr className="gui-table-row">
-      <td className="gui-table-column gui-column1">{data}</td>
-      <td className="gui-table-column gui-column2">{vendedor}</td>
-      <td className="gui-table-column gui-column3">{clientesVisitados}</td>
-      <td className="gui-table-column gui-column4">{negociosFechados}</td>
-      <td className="gui-table-column gui-column5">{valor}</td>
+      <td data-label="Data" className="gui-table-column gui-column1">
+        {data}
+      </td>
+      <td data-label="vendedor" className="gui-table-column gui-column2">
+        {vendedor}
+      </td>
+      <td
+        data-label="Clientes Visitados"
+        className="gui-table-column gui-column3"
+      >
+        {clientesVisitados}
+      </td>
+      <td
+        data-label="Negócios Fechados"
+        className="gui-table-column gui-column4"
+      >
+        {negociosFechados}
+      </td>
+      <td data-label="Valor" className="gui-table-column gui-column5">
+        {valor}
+      </td>
     </tr>
   );
 };
@@ -32,15 +48,21 @@ const DataTable: React.FC = () => {
           <table data-vertable="gui-table" className="gui-table">
             <thead>
               <tr className="gui-table-row gui-table-head">
-                <th className="gui-table-column gui-column1">Data</th>
-                <th className="gui-table-column gui-column2">Vendedor</th>
-                <th className="gui-table-column gui-column3">
+                <th scope="col" className="gui-table-column gui-column1">
+                  Data
+                </th>
+                <th scope="col" className="gui-table-column gui-column2">
+                  Vendedor
+                </th>
+                <th scope="col" className="gui-table-column gui-column3">
                   Clientes visitados
                 </th>
-                <th className="gui-table-column gui-column4">
+                <th scope="col" className="gui-table-column gui-column4">
                   Negócios Fechados
                 </th>
-                <th className="gui-table-column gui-column5">Valor</th>
+                <th scope="col" className="gui-table-column gui-column5">
+                  Valor
+                </th>
               </tr>
             </thead>
             <tbody>
