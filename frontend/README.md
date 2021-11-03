@@ -16,18 +16,3 @@
   <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white">
 </p>
 
-
-## Contributing
-
-Contributions are always welcome!
-
-
-## Authors
-
-- [@guilhermeesdras](https://www.github.com/GuilhermeEsdras)
-- [@devsuperior]()
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)

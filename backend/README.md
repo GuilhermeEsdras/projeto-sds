@@ -26,19 +26,3 @@
 ### Layered Structure
 
 ![Diagrama do padrão de camadas adotado](./docs/images/camadas.png "Padrão de camadas")
-
-
-## Contributing
-
-Contributions are always welcome!
-
-
-## Authors
-
-- [@guilhermeesdras](https://www.github.com/GuilhermeEsdras)
-- [@devsuperior]()
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)

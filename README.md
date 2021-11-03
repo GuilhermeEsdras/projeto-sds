@@ -40,6 +40,17 @@ Start the server
 ```
 
 
+## Contributing
+
+Contributions are always welcome!
+
+
+## Authors
+
+- [@guilhermeesdras](https://www.github.com/GuilhermeEsdras)
+- [@devsuperior]()
+
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
