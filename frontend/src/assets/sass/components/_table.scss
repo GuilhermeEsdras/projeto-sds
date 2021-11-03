@@ -40,8 +40,8 @@ table {
   }
 
   tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
+    background-color: $color-light-white;
+    border: 1px solid $color-light-grey;
     padding: .35em;
   }
 
@@ -71,13 +71,13 @@ table {
     }
 
     tr {
-      border-bottom: 3px solid #ddd;
+      border-bottom: 3px solid $color-light-grey;
       display: block;
       margin-bottom: .625em;
     }
     
     td {
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid $color-light-grey;
       display: block;
       font-size: .8em;
       text-align: right;
