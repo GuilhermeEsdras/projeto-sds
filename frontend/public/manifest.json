@@ -1,0 +1,19 @@
+{
+  "short_name": "Gui Vendas",
+  "name": "Gui Vendas - SDS Project",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "theme_color": "#ff8400",
+  "background_color": "#f39e43"
+}
