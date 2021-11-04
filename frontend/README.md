@@ -1,4 +1,3 @@
-
 # Projeto SDS - Gui Vendas | Front End
 
 > This is the **Front End** of the SDS Project, developed during the DevSuperior's bootcamp "Semana Spring React (*Spring React Week*)"!
@@ -18,12 +17,12 @@
 </p>
 
 
-## Live Preview
+## Front End url on Netlify
 
-To view this project live, visit: https://gui-dsvendas.netlify.app/
+https://gui-dsvendas.netlify.app/
 
 
-## Run Locally
+## Run Front End Locally
 
 Clone the project
 
@@ -53,20 +52,3 @@ Start the server
   //or
   yarn start
 ```
-
-
-## Contributing
-
-Contributions are always welcome!
-
-
-## Authors
-
-- [@guilhermeesdras](https://www.github.com/GuilhermeEsdras)
-- [@devsuperior]()
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-

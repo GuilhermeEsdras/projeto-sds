@@ -1,37 +1,42 @@
-package dev.esdras.guivendas.entities;
+package dev.esdras.guivendas.dto;
 
-import javax.persistence.*;
+import dev.esdras.guivendas.entities.Sale;
+
 import java.time.LocalDate;
 
-@Entity // Notação responsável por fazer o mapeamento dos dados Orientados à Objetos para os de paradigma Relacional
-@Table(name = "tb_sales") // Especifica o nome da tabela no banco onde estão os dados que serão mapeados com esta classe
-public class Sale {
+/**
+ * DTO = Data Transfer Object
+ * Possui os mesmos dados que a entidade Sale, porém, ao contrário da entidade, essa não possui nenhuma relação com o JPA ou Banco de Dados
+ * É usada para ser retornada pelo Service.
+ */
+public class SaleDTO {
 
-    @Id // Indica ao banco de dados que esse atributo é a chave primária
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Indica que este atributo é autoincrementável
     private Long id;
-
     private Integer visited;
     private Integer deals;
     private Double amount;
     private LocalDate date;
 
-    /**
-     * Composição das entidades Sale & Seller
-     */
-    @ManyToOne // Cardinalidade Muitos para Um
-    @JoinColumn(name = "seller_id") // Especifica a chave estrangeira
-    private Seller seller; // No modelo conceitual: Sale possui 1 Seller
+    private SellerDTO seller;
 
-    public Sale() {}
+    public SaleDTO() {}
 
-    public Sale(Long id, Integer visited, Integer deals, Double amount, LocalDate date, Seller seller) {
+    public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date, SellerDTO seller) {
         this.id = id;
         this.visited = visited;
         this.deals = deals;
         this.amount = amount;
         this.date = date;
         this.seller = seller;
+    }
+
+    public SaleDTO(Sale entity) {
+        id = entity.getId();
+        visited = entity.getVisited();
+        deals = entity.getDeals();
+        amount = entity.getAmount();
+        date = entity.getDate();
+        seller = new SellerDTO(entity.getSeller());
     }
 
     public Long getId() {
@@ -74,11 +79,11 @@ public class Sale {
         this.date = date;
     }
 
-    public Seller getSeller() {
+    public SellerDTO getSeller() {
         return seller;
     }
 
-    public void setSeller(Seller seller) {
+    public void setSeller(SellerDTO seller) {
         this.seller = seller;
     }
 }

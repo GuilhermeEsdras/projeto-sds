@@ -16,34 +16,43 @@
 </p>
 
 
-## Live Preview
-
-To view this project live, visit: https://gui-dsvendas.netlify.app/
-
-
 ## Applied Build Patterns
 
 ### Conceptual Model
 
- ![Entidades Seller e Sale](./docs/images/modelo-conceitual.png "Diagrama de Modelo conceitual")
+![Entidades Seller e Sale](./docs/images/modelo-conceitual.png "Diagrama de Modelo conceitual")
 
 
 ### Layered Structure
 
- ![Diagrama do padrão de camadas adotado](./docs/images/camadas.png "Padrão de camadas")
+![Diagrama do padrão de camadas adotado](./docs/images/camadas.png "Padrão de camadas")
 
 
-## Contributing
+## Back End url on Heroku
 
-Contributions are always welcome!
-
-
-## Authors
-
-- [@guilhermeesdras](https://www.github.com/GuilhermeEsdras)
-- [@devsuperior]()
+https://sds-guilherme.herokuapp.com/
 
 
-## License
+## Run Back End Requests in Postman Workspace
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Use this Postman Collection to run Back End requests:
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/16302148-9b655010-3738-41cb-8623-e7deaae2067b?action=collection%2Ffork&collection-url=entityId%3D16302148-9b655010-3738-41cb-8623-e7deaae2067b%26entityType%3Dcollection%26workspaceId%3D550abbbf-72a7-4469-a9f2-6c594c534147#?env%5BGui%20Sales%20-%20Projeto%20SDS%5D=W3sia2V5IjoiaG9zdCIsInZhbHVlIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwIiwiZW5hYmxlZCI6dHJ1ZX1d)
+> After click, you can Fork Collection, View Collection or Import a Copy. Your choice.
+
+### Locally
+
+Clone the project
+
+```bash
+  git clone git@github.com:GuilhermeEsdras/projeto-sds.git
+```
+
+Go to the project backend directory
+
+```bash
+  cd projeto-sds
+  cd backend
+```
+
+Run application and use the preview Postman Collection.
