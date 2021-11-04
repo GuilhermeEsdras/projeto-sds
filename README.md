@@ -5,7 +5,7 @@
 
 ## Live Preview
 
-To view this project live, visit: https://gui-dsvendas.netlify.app/
+To view this project live, visit: https://esdras.dev/projects/guisales
 
 
 ## Contributing
