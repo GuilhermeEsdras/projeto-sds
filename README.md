@@ -10,7 +10,7 @@
   <br />
   <em>Click on each project's folders to see their particular README!</em> 😃👍
   <br />
-  <a src="./backend">backend</a> • <a src="./frontend">frontend</a>
+  <a href="backend">backend</a> • <a href="frontend">frontend</a>
 </p>
 
 
