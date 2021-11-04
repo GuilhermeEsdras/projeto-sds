@@ -1,4 +1,4 @@
-# Propertis explanation
+# Properties explanation
 
 ## Macete do JPA
 ```properties
