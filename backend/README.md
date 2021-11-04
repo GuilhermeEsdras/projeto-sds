@@ -26,3 +26,23 @@
 ### Layered Structure
 
 ![Diagrama do padrão de camadas adotado](./docs/images/camadas.png "Padrão de camadas")
+
+
+## Test Requests in Postman Workspace
+
+Clone the project
+
+```bash
+  git clone git@github.com:GuilhermeEsdras/projeto-sds.git
+```
+
+Go to the project backend directory
+
+```bash
+  cd projeto-sds
+  cd backend
+```
+
+> Run application and use this Postman Collection to test this Back End requests:
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/16302148-9b655010-3738-41cb-8623-e7deaae2067b?action=collection%2Ffork&collection-url=entityId%3D16302148-9b655010-3738-41cb-8623-e7deaae2067b%26entityType%3Dcollection%26workspaceId%3D550abbbf-72a7-4469-a9f2-6c594c534147#?env%5BGui%20Sales%20-%20Projeto%20SDS%5D=W3sia2V5IjoiaG9zdCIsInZhbHVlIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwIiwiZW5hYmxlZCI6dHJ1ZX1d)
