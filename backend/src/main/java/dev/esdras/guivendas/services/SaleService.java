@@ -1,6 +1,8 @@
 package dev.esdras.guivendas.services;
 
 import dev.esdras.guivendas.dto.SaleDTO;
+import dev.esdras.guivendas.dto.SaleSuccessDTO;
+import dev.esdras.guivendas.dto.SaleSumDTO;
 import dev.esdras.guivendas.entities.Sale;
 import dev.esdras.guivendas.repositories.SaleRepository;
 import dev.esdras.guivendas.repositories.SellerRepository;
@@ -9,6 +11,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @Service // Notação que registra a classe como um componente do sistema fazendo a mesma poder ser injetada em outros componentes
@@ -30,5 +34,15 @@ public class SaleService {
         sellerRepository.findAll();
         Page<Sale> result = repository.findAll(pageable);
         return result.map(SaleDTO::new); // Page já é uma string, não precisa do stream() nem Collectors
+    }
+
+    @Transactional(readOnly = true)
+    public List<SaleSumDTO> amountGroupedBySeller() {
+        return repository.amountGroupedBySeller();
+    }
+
+    @Transactional(readOnly = true)
+    public List<SaleSuccessDTO> successGroupedBySeller() {
+        return repository.successGroupedBySeller();
     }
 }
