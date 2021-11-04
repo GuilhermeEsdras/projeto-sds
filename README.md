@@ -1,6 +1,10 @@
 # Projeto SDS - Gui Vendas
 
-> A Full Stack Project developed with Java + Spring + PostgreSQL on Back End and TypeScript + React.JS on Front End during the DevSuperior's bootcamp "Semana Spring React (*Spring React Week*)"!
+> This is the *monorepo (frontend + backend repos)* of **Gui Vendas** project! 
+
+A Full Stack Project developed with Java + Spring + PostgreSQL on Back End and TypeScript + React.JS on Front End during the DevSuperior's bootcamp "Semana Spring React (*Spring React Week*)"!
+
+*Click on each project's folders to see their particular README!* 😃
 
 
 ## Live Preview
