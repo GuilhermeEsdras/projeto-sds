@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <div className="container mt-5 pt-5">
+      <div className="container">
         <div className="jumbotron">
           <h1 className="display-4">Gui Vendas</h1>
           <p className="lead">
