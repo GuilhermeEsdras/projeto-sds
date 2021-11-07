@@ -3,7 +3,7 @@
 > This is the *monorepo (frontend + backend repos)* of **Gui Vendas** project!
 
 <p align="center">
-  <img src="./_files/imgs/gui-vendas-project-cover.png" width="1000">
+  <img src="./_files/imgs/gui-vendas-project-cover-v3.png" width="1000">
   <br />
     A Full Stack Project developed with Java + Spring + PostgreSQL on Back End and TypeScript + React.JS on Front End during the DevSuperior's bootcamp "Semana Spring React (<em>Spring React Week</em>)"!
   <br />
