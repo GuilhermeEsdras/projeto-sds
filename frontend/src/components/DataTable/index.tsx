@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
+import { BASE_URL } from 'api/requests';
 import axios from 'axios';
 import Pagination from 'components/Pagination';
 import { SalePage } from 'types/sale';
 import { formatLocalDate } from 'utils/format';
-import { BASE_URL } from 'utils/requests';
 
 interface TableRowProps {
   data: string;
@@ -64,7 +64,7 @@ const DataTable: React.FC = () => {
       .then((response) => {
         setPage(response.data);
       });
-  }, [activePage]);
+  }, [activePage]); // @NOTE: Chama o useEffect toda vez que activePage muda seu valor.
 
   const changePage = (index: number) => {
     setActivePage(index);
