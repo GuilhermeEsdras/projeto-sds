@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import axios from 'axios';
+import Pagination from 'components/Pagination';
 import { SalePage } from 'types/sale';
 import { formatLocalDate } from 'utils/format';
 import { BASE_URL } from 'utils/requests';
@@ -48,6 +49,7 @@ const TableRow = ({
 };
 
 const DataTable: React.FC = () => {
+  const [activePage, setActivePage] = useState(0);
   const [page, setPage] = useState<SalePage>({
     first: true,
     last: true,
@@ -58,54 +60,61 @@ const DataTable: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/sales?page=1&size=20&sort=date,desc`)
+      .get(`${BASE_URL}/sales?page=${activePage}&size=20&sort=date,desc`)
       .then((response) => {
         setPage(response.data);
       });
-  }, []);
+  }, [activePage]);
+
+  const changePage = (index: number) => {
+    setActivePage(index);
+  };
 
   return (
-    <div className="gui-table-container mb-5">
-      <div className="gui-table-wrapper">
-        <div className="gui-table-div gui-table">
-          <table data-vertable="gui-table" className="gui-table">
-            <thead>
-              <tr className="gui-table-row gui-table-head">
-                <th scope="col" className="gui-table-column gui-column1">
-                  Data
-                </th>
-                <th scope="col" className="gui-table-column gui-column2">
-                  Vendedor
-                </th>
-                <th scope="col" className="gui-table-column gui-column3">
-                  Clientes visitados
-                </th>
-                <th scope="col" className="gui-table-column gui-column4">
-                  Negócios Fechados
-                </th>
-                <th scope="col" className="gui-table-column gui-column5">
-                  Valor
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {page.content?.map((pageContent) => {
-                return (
-                  <TableRow
-                    key={pageContent.id}
-                    data={formatLocalDate(pageContent.date, 'dd/MM/yyyy')}
-                    vendedor={pageContent.seller.name}
-                    clientesVisitados={pageContent.visited}
-                    negociosFechados={pageContent.deals}
-                    valor={pageContent.amount}
-                  />
-                );
-              })}
-            </tbody>
-          </table>
+    <>
+      <Pagination page={page} onPageChange={changePage} />
+      <div className="gui-table-container mb-5">
+        <div className="gui-table-wrapper">
+          <div className="gui-table-div gui-table">
+            <table data-vertable="gui-table" className="gui-table">
+              <thead>
+                <tr className="gui-table-row gui-table-head">
+                  <th scope="col" className="gui-table-column gui-column1">
+                    Data
+                  </th>
+                  <th scope="col" className="gui-table-column gui-column2">
+                    Vendedor
+                  </th>
+                  <th scope="col" className="gui-table-column gui-column3">
+                    Clientes visitados
+                  </th>
+                  <th scope="col" className="gui-table-column gui-column4">
+                    Negócios Fechados
+                  </th>
+                  <th scope="col" className="gui-table-column gui-column5">
+                    Valor
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {page.content?.map((pageContent) => {
+                  return (
+                    <TableRow
+                      key={pageContent.id}
+                      data={formatLocalDate(pageContent.date, 'dd/MM/yyyy')}
+                      vendedor={pageContent.seller.name}
+                      clientesVisitados={pageContent.visited}
+                      negociosFechados={pageContent.deals}
+                      valor={pageContent.amount}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

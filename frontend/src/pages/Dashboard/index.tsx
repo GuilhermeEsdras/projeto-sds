@@ -10,7 +10,7 @@ const Dashboard = () => {
       <Link className="btn btn-primary btn-sm" to="/">
         &laquo; Homepage
       </Link>
-      <h1 className="text-primary py-3">Dashboard de Venda</h1>
+      <h1 className="text-primary py-3">Dashboard de Vendas</h1>
 
       <div className="row px-3">
         <div className="col-sm-6">
