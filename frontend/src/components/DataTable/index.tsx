@@ -1,9 +1,16 @@
+import { useEffect, useState } from 'react';
+
+import axios from 'axios';
+import { SalePage } from 'types/sale';
+import { formatLocalDate } from 'utils/format';
+import { BASE_URL } from 'utils/requests';
+
 interface TableRowProps {
   data: string;
   vendedor: string;
   clientesVisitados: number;
   negociosFechados: number;
-  valor: string;
+  valor: number;
 }
 
 const TableRow = ({
@@ -41,6 +48,22 @@ const TableRow = ({
 };
 
 const DataTable: React.FC = () => {
+  const [page, setPage] = useState<SalePage>({
+    first: true,
+    last: true,
+    number: 0,
+    totalElements: 0,
+    totalPages: 0,
+  });
+
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/sales?page=1&size=20&sort=date,desc`)
+      .then((response) => {
+        setPage(response.data);
+      });
+  }, []);
+
   return (
     <div className="gui-table-container mb-5">
       <div className="gui-table-wrapper">
@@ -66,34 +89,18 @@ const DataTable: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              <TableRow
-                data="22/04/2021"
-                vendedor="Guilherme Esdras"
-                clientesVisitados={34}
-                negociosFechados={25}
-                valor="15017.00"
-              />
-              <TableRow
-                data="22/04/2021"
-                vendedor="Guilherme Esdras"
-                clientesVisitados={34}
-                negociosFechados={25}
-                valor="15017.00"
-              />
-              <TableRow
-                data="22/04/2021"
-                vendedor="Guilherme Esdras"
-                clientesVisitados={34}
-                negociosFechados={25}
-                valor="15017.00"
-              />
-              <TableRow
-                data="22/04/2021"
-                vendedor="Guilherme Esdras"
-                clientesVisitados={34}
-                negociosFechados={25}
-                valor="15017.00"
-              />
+              {page.content?.map((pageContent) => {
+                return (
+                  <TableRow
+                    key={pageContent.id}
+                    data={formatLocalDate(pageContent.date, 'dd/MM/yyyy')}
+                    vendedor={pageContent.seller.name}
+                    clientesVisitados={pageContent.visited}
+                    negociosFechados={pageContent.deals}
+                    valor={pageContent.amount}
+                  />
+                );
+              })}
             </tbody>
           </table>
         </div>
