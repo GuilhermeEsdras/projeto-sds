@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { BASE_URL } from 'api/requests';
 import axios from 'axios';
+import LoadingBars from 'components/LoadingBars';
 import Pagination from 'components/Pagination';
 import { SalePage } from 'types/sale';
 import { formatLocalDate } from 'utils/format';
@@ -49,6 +50,7 @@ const TableRow = ({
 };
 
 const DataTable: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const [activePage, setActivePage] = useState(0);
   const [page, setPage] = useState<SalePage>({
     first: true,
@@ -59,10 +61,12 @@ const DataTable: React.FC = () => {
   });
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`${BASE_URL}/sales?page=${activePage}&size=20&sort=date,desc`)
       .then((response) => {
         setPage(response.data);
+        setLoading(false);
       });
   }, [activePage]); // @NOTE: Chama o useEffect toda vez que activePage muda seu valor.
 
@@ -70,7 +74,9 @@ const DataTable: React.FC = () => {
     setActivePage(index);
   };
 
-  return (
+  return loading ? (
+    <LoadingBars />
+  ) : (
     <>
       <Pagination page={page} onPageChange={changePage} />
       <div className="gui-table-container mb-5">

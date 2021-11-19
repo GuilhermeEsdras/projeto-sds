@@ -3,6 +3,7 @@ import Chart from 'react-apexcharts';
 
 import { BASE_URL } from 'api/requests';
 import axios from 'axios';
+import LoadingBars from 'components/LoadingBars';
 import { SaleSum } from 'types/sale';
 
 type ChartData = {
@@ -11,6 +12,7 @@ type ChartData = {
 };
 
 const DonutChart = () => {
+  const [loading, setLoading] = useState(true);
   const [chartData, setChartData] = useState<ChartData>({
     labels: [],
     series: [],
@@ -23,6 +25,7 @@ const DonutChart = () => {
       const mySeries = data.map((x) => x.sum);
 
       setChartData({ labels: myLabels, series: mySeries });
+      setLoading(false);
     });
   }, []);
 
@@ -32,7 +35,9 @@ const DonutChart = () => {
     },
   };
 
-  return (
+  return loading ? (
+    <LoadingBars />
+  ) : (
     <Chart
       options={{ ...options, labels: chartData.labels }}
       series={chartData.series}

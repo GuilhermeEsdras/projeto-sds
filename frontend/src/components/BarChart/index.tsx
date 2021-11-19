@@ -3,6 +3,7 @@ import Chart from 'react-apexcharts';
 
 import { BASE_URL } from 'api/requests';
 import axios from 'axios';
+import LoadingBars from 'components/LoadingBars';
 import { SaleSuccess } from 'types/sale';
 import { round } from 'utils/format';
 
@@ -19,6 +20,7 @@ type ChartData = {
 };
 
 const BarChart = () => {
+  const [loading, setLoading] = useState(true);
   const [chartData, setChartData] = useState<ChartData>({
     labels: {
       categories: [],
@@ -46,6 +48,7 @@ const BarChart = () => {
           },
         ],
       });
+      setLoading(false);
     });
   }, []);
 
@@ -57,7 +60,9 @@ const BarChart = () => {
     },
   };
 
-  return (
+  return loading ? (
+    <LoadingBars />
+  ) : (
     <Chart
       options={{ ...options, xaxis: chartData.labels }}
       series={chartData.series}
